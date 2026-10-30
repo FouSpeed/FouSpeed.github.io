@@ -297,6 +297,10 @@ h3 {
   color: var(--margin-red);
   border: 1.5px solid var(--margin-red);
 }
+.tag--wip {
+  color: var(--muted);
+  border: 1.5px dashed var(--muted);
+}
 
 /* ---------- Projets ---------- */
 
@@ -370,7 +374,8 @@ h3 {
     margin-bottom: 0.15rem;
   }
   .margin-note br { display: none; }
-  .top nav { gap: 0.8rem; }
+  .top__inner { padding-block: 0.5rem; }
+  .top nav { flex-wrap: wrap; justify-content: center; gap: 0.25rem 0.9rem; }
   .top nav a { font-size: 0.86rem; }
   .top__name { display: none; }
   .skills { grid-template-columns: 1fr; gap: 0.15rem; }
