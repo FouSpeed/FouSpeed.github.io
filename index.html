@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thomas Felmy, élève ingénieur à l'ENSEEIHT</title>
+  <meta name="description" content="E-portfolio de Thomas Felmy, élève ingénieur en 1re année Sciences du Numérique à l'ENSEEIHT : parcours, formation, projets et compétences.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="top__name" href="#">Thomas Felmy</a>
+      <nav aria-label="Sections">
+        <a href="#parcours">Parcours</a>
+        <a href="#formation">Formation</a>
+        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- Accueil -->
+    <section class="hero wrap">
+      <div class="hero__text">
+        <h1>Thomas Felmy</h1>
+        <p class="hero__role">Élève ingénieur en 1re année, filière Sciences du Numérique à l'ENSEEIHT (Toulouse INP), après deux ans de prépa PCSI puis PSI* au lycée Gustave Eiffel de Bordeaux.</p>
+        <p>J'aime les problèmes qu'on peut modéliser puis faire tourner : un labyrinthe à résoudre, une grille de sudoku à générer, une trajectoire à simuler. Ce portfolio rassemble mon parcours, ce que j'étudie et les projets que j'ai codés.</p>
+        <p class="hero__links">
+          <a class="btn" href="#projets">Voir mes projets</a>
+          <a class="btn btn--ghost" href="https://github.com/FouSpeed" target="_blank" rel="noopener">Mon GitHub</a>
+        </p>
+      </div>
+
+      <figure class="maze">
+        <canvas id="maze" width="360" height="360" role="img" aria-label="Labyrinthe généré aléatoirement, avec le plus court chemin de l'entrée à la sortie tracé en rouge"></canvas>
+        <figcaption>
+          Généré et résolu à l'instant dans votre navigateur, sur le principe de mon projet <a href="https://github.com/FouSpeed/labyrinthe" target="_blank" rel="noopener">labyrinthe</a> : exploration en profondeur pour creuser, parcours en largeur pour trouver le plus court chemin.
+          <button type="button" id="maze-new" class="link-btn">Générer un autre labyrinthe</button>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Parcours -->
+    <section id="parcours" class="block wrap">
+      <h2>Parcours</h2>
+      <ol class="timeline">
+        <li>
+          <span class="margin-note">Depuis sept. 2026</span>
+          <h3>ENSEEIHT, Toulouse INP</h3>
+          <p>Cycle ingénieur, 1re année en Sciences du Numérique : informatique, mathématiques appliquées, signal, réseaux et télécommunications.</p>
+        </li>
+        <li>
+          <span class="margin-note">2025 – 2026</span>
+          <h3>PSI*, lycée Gustave Eiffel, Bordeaux</h3>
+          <p>Deuxième année de classe préparatoire, en classe étoile : mathématiques, physique-chimie, sciences de l'ingénieur et informatique, avec la préparation aux concours.</p>
+        </li>
+        <li>
+          <span class="margin-note">2024 – 2025</span>
+          <h3>PCSI, lycée Gustave Eiffel, Bordeaux</h3>
+          <p>Première année de classe préparatoire scientifique.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Formation -->
+    <section id="formation" class="block wrap">
+      <h2>Ce que j'étudie cette année</h2>
+      <p class="lead">La 1re année de Sciences du Numérique pose un socle commun avant le choix d'un parcours en 2e année. Les enseignements, d'après le programme de l'école :</p>
+
+      <div class="semesters">
+        <div class="semester">
+          <h3>Semestre 5 <span class="tag tag--now">en cours</span></h3>
+          <dl>
+            <dt>Informatique</dt>
+            <dd>Programmation impérative, langage C, architecture des ordinateurs, modélisation</dd>
+            <dt>Mathématiques</dt>
+            <dd>Intégration et probabilités, optimisation et EDP, statistiques</dd>
+            <dt>Signal</dt>
+            <dd>Traitement du signal, automatique, initiation à Matlab</dd>
+          </dl>
+        </div>
+        <div class="semester">
+          <h3>Semestre 6</h3>
+          <dl>
+            <dt>Informatique</dt>
+            <dd>Technologie objet, systèmes d'exploitation, architecture des ordinateurs, langage C</dd>
+            <dt>Réseaux et télécoms</dt>
+            <dd>Internet, réseaux locaux, télécommunications</dd>
+            <dt>Calcul</dt>
+            <dd>Calcul scientifique et analyse de données, avec un projet</dd>
+          </dl>
+        </div>
+      </div>
+      <p class="note">S'y ajoutent l'anglais, une deuxième langue vivante, le sport et des modules de management. L'année se termine par un stage d'au moins six semaines.</p>
+    </section>
+
+    <!-- Projets -->
+    <section id="projets" class="block wrap">
+      <h2>Projets</h2>
+      <p class="lead">Tous les projets sont publics sur GitHub. Pour chacun : ce qu'il fait, et les points techniques qu'il m'a fait travailler.</p>
+
+      <ul class="projects">
+        <li class="project">
+          <span class="margin-note">2026 <br>Ada</span>
+          <h3><a href="https://github.com/FouSpeed/bataille_navale" target="_blank" rel="noopener">Bataille navale</a> <span class="tag tag--now">en cours</span></h3>
+          <p>Une bataille navale en terminal contre une IA, en cours d'écriture en Ada.</p>
+          <ul class="points">
+            <li>Découpage en paquetages : jeu, saisie, affichage, IA, file générique</li>
+            <li>Spécification (.ads) séparée du corps (.adb), typage fort</li>
+          </ul>
+        </li>
+
+        <li class="project">
+          <span class="margin-note">2023 <br>Python</span>
+          <h3><a href="https://github.com/FouSpeed/generate_sudoku" target="_blank" rel="noopener">Générateur de sudoku</a></h3>
+          <p>Génère une grille complète valide, retire des cases selon la difficulté voulue et exporte la grille et sa solution en image.</p>
+          <ul class="points">
+            <li>Programmation orientée objet (classes <code>Sudoku</code> et <code>Solver</code>)</li>
+            <li>Vérification des contraintes ligne, colonne et bloc</li>
+            <li>Rendu d'image avec Pillow ; solveur par déduction en cours d'écriture</li>
+          </ul>
+        </li>
+
+        <li class="project">
+          <span class="margin-note">2023 <br>Python</span>
+          <h3><a href="https://github.com/FouSpeed/bouncing-ball" target="_blank" rel="noopener">Simulation d'un boulet de canon</a></h3>
+          <p>Un boulet lancé avec une vitesse et un angle initiaux, soumis à la pesanteur, animé en temps réel.</p>
+          <ul class="points">
+            <li>Mécanique du point : décomposition de la vitesse, g = 9,81 m/s²</li>
+            <li>Intégration pas à pas avec un pas de temps mesuré à chaque image</li>
+            <li>Affichage et boucle de jeu avec pygame</li>
+          </ul>
+        </li>
+
+        <li class="project">
+          <span class="margin-note">2023 <br>Python</span>
+          <h3><a href="https://github.com/FouSpeed/quizz-departement-fran-ais" target="_blank" rel="noopener">Quiz des départements</a></h3>
+          <p>Un quiz pour apprendre les numéros des départements français, avec trois modes de jeu : normal, contre la montre et sans erreur.</p>
+          <ul class="points">
+            <li>Questions à choix multiples tirées sans répétition</li>
+            <li>Records sauvegardés dans un fichier JSON</li>
+            <li>Paramètres réglables séparés du code</li>
+          </ul>
+        </li>
+
+        <li class="project">
+          <span class="margin-note">2023 <br>Python</span>
+          <h3><a href="https://github.com/FouSpeed/Pong" target="_blank" rel="noopener">Pong</a></h3>
+          <p>Le jeu Pong à deux joueurs sur le même clavier (W/S et flèches).</p>
+          <ul class="points">
+            <li>Classes pour la fenêtre, la balle et les raquettes</li>
+            <li>Gestion des collisions et du score avec pygame</li>
+          </ul>
+        </li>
+
+        <li class="project">
+          <span class="margin-note">2022 <br>Python</span>
+          <h3><a href="https://github.com/FouSpeed/labyrinthe" target="_blank" rel="noopener">Labyrinthe</a></h3>
+          <p>Génère un labyrinthe carré aléatoire et affiche, si on le demande, le plus court chemin jusqu'à la sortie. C'est ce principe qui anime le labyrinthe en haut de cette page.</p>
+          <ul class="points">
+            <li>Génération aléatoire sur une grille</li>
+            <li>Recherche de plus court chemin</li>
+            <li>Affichage avec matplotlib</li>
+          </ul>
+        </li>
+
+        <li class="project">
+          <span class="margin-note">2021 <br>Python</span>
+          <h3><a href="https://github.com/FouSpeed/Texas-Instruments-TI-83-Premium-CE-Graphing-Calculator" target="_blank" rel="noopener">Programmes pour TI-83 Premium CE</a></h3>
+          <p>Deux programmes pour calculatrice : l'un donne les ensembles (ℕ, ℤ, 𝔻, ℚ, ℝ) auxquels appartient un nombre ou un calcul, l'autre décompose un entier en facteurs premiers et liste ses diviseurs.</p>
+          <ul class="points">
+            <li>Calcul exact avec le module <code>fractions</code></li>
+            <li>Arithmétique : divisions successives, liste des diviseurs</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Compétences -->
+    <section id="competences" class="block wrap">
+      <h2>Compétences</h2>
+      <dl class="skills">
+        <dt>Langages</dt>
+        <dd>Python (pygame, matplotlib, Pillow), Ada en apprentissage, C au programme de 1re année, initiation à Matlab</dd>
+        <dt>Outils</dt>
+        <dd>Git et GitHub</dd>
+        <dt>Bases scientifiques</dt>
+        <dd>Mathématiques, physique et sciences de l'ingénieur de prépa PSI*</dd>
+        <dt>Méthode</dt>
+        <dd>Modéliser un problème avant de le coder, découper un programme en modules, documenter son code</dd>
+      </dl>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="block wrap contact">
+      <h2>Contact</h2>
+      <p>Je cherche un stage de fin de 1re année, de six semaines minimum entre juin et août 2027. Pour en parler ou voir mon code :</p>
+      <ul class="contact__list">
+        <li><a href="https://github.com/FouSpeed" target="_blank" rel="noopener">github.com/FouSpeed</a></li>
+        <!-- Décommente et complète les lignes suivantes :
+        <li><a href="mailto:ton.adresse@exemple.fr">ton.adresse@exemple.fr</a></li>
+        <li><a href="https://www.linkedin.com/in/ton-profil" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="cv.pdf">Télécharger mon CV (PDF)</a></li>
+        -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>Site écrit en HTML, CSS et JavaScript, hébergé sur GitHub Pages.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+/* ------------------------------------------------------------
+   Thème : copie de prépa. Papier quadrillé, encre bleue,
+   marge rouge. La marge porte les dates (parcours, projets).
+   ------------------------------------------------------------ */
+
+:root {
+  --paper: #f6f8fb;
+  --grid: #e1e7f0;
+  --ink: #1d3a8a;        /* encre bleue : titres, liens, murs du labyrinthe */
+  --ink-soft: #4a5f9c;
+  --text: #1a2233;
+  --muted: #5a6478;
+  --margin-red: #c7323d; /* trait de marge et chemin solution */
+  --surface: #ffffff;
+
+  --margin-w: 9.5rem;    /* largeur de la marge (dates) */
+  --font: "Schibsted Grotesk", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #131a2a;
+    --grid: #1d2639;
+    --ink: #9fb6ff;
+    --ink-soft: #8396cc;
+    --text: #e6eaf3;
+    --muted: #a3acc0;
+    --margin-red: #ff6b74;
+    --surface: #1a2236;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--paper);
+  /* quadrillage 5 mm façon copie double */
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+a { color: var(--ink); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 3px solid var(--margin-red);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+code {
+  font-size: 0.92em;
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  padding: 0 0.3em;
+  border-radius: 3px;
+}
+
+.wrap {
+  width: min(100% - 2rem, 68rem);
+  margin-inline: auto;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0.5rem;
+  background: var(--surface);
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+.skip:focus { left: 1rem; }
+
+/* ---------- En-tête ---------- */
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--grid);
+}
+.top__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.5rem;
+}
+.top__name {
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text);
+  white-space: nowrap;
+}
+.top nav {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+}
+.top nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+.top nav a:hover { color: var(--ink); }
+
+/* ---------- Accueil ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding-block: 4.5rem 3.5rem;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 6vw, 4.25rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 1.25rem;
+}
+
+.hero__role {
+  font-size: 1.25rem;
+  line-height: 1.45;
+  font-weight: 500;
+  margin: 0 0 1rem;
+  max-width: 34ch;
+}
+.hero__text p { max-width: 60ch; }
+
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.15rem;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--ink);
+}
+.btn:hover { background: var(--ink-soft); border-color: var(--ink-soft); }
+.btn--ghost { background: transparent; color: var(--ink); }
+.btn--ghost:hover { background: var(--surface); color: var(--ink); border-color: var(--ink); }
+
+.maze { margin: 0; }
+.maze canvas {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1;
+  height: auto;
+  margin-inline: auto;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+}
+.maze figcaption {
+  max-width: 440px;
+  margin: 0.85rem auto 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.link-btn {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  color: var(--ink);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+/* ---------- Sections ---------- */
+
+.block {
+  position: relative;
+  padding-block: 3rem;
+  padding-left: calc(var(--margin-w) + 1.5rem);
+}
+/* le trait rouge de marge */
+.block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--margin-w);
+  width: 2px;
+  background: var(--margin-red);
+  opacity: 0.55;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 0 1rem;
+}
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin: 0 0 0.35rem;
+}
+
+.lead { max-width: 62ch; margin: 0 0 1.75rem; }
+.note { max-width: 62ch; color: var(--muted); font-size: 0.95rem; margin-top: 1.5rem; }
+
+/* texte posé dans la marge, à gauche du trait rouge */
+.margin-note {
+  position: absolute;
+  left: calc(-1 * (var(--margin-w) + 1.5rem));
+  width: calc(var(--margin-w) - 1rem);
+  text-align: right;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--margin-red);
+  font-weight: 500;
+  padding-top: 0.15rem;
+}
+
+/* ---------- Parcours ---------- */
+
+.timeline,
+.projects {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.timeline > li,
+.projects > li {
+  position: relative;
+  max-width: 62ch;
+}
+.timeline > li + li { margin-top: 1.75rem; }
+.timeline p { margin: 0; }
+
+/* ---------- Formation ---------- */
+
+.semesters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.semester {
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  border-top: 3px solid var(--ink);
+  border-radius: 4px;
+  padding: 1.25rem 1.4rem;
+}
+.semester h3 { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.75rem; }
+.semester dl { margin: 0; }
+.semester dt { font-weight: 700; font-size: 0.95rem; margin-top: 0.75rem; }
+.semester dt:first-child { margin-top: 0; }
+.semester dd { margin: 0.1rem 0 0; color: var(--muted); }
+
+.tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.3em 0.55em;
+  border-radius: 99px;
+  vertical-align: 0.2em;
+}
+.tag--now {
+  color: var(--margin-red);
+  border: 1.5px solid var(--margin-red);
+}
+
+/* ---------- Projets ---------- */
+
+.project + .project {
+  margin-top: 2.25rem;
+}
+.project h3 a { text-decoration: none; }
+.project h3 a:hover { text-decoration: underline; }
+.project p { margin: 0 0 0.5rem; }
+.points {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.97rem;
+}
+.points li::marker { color: var(--ink-soft); }
+
+/* ---------- Compétences ---------- */
+
+.skills {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.65rem 1.5rem;
+  margin: 0;
+  max-width: 62ch;
+}
+.skills dt { font-weight: 700; }
+.skills dd { margin: 0; }
+
+/* ---------- Contact ---------- */
+
+.contact p { max-width: 58ch; }
+.contact__list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-weight: 700;
+}
+
+.foot {
+  padding-block: 2rem 3rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--grid);
+}
+
+/* ---------- Écrans étroits ---------- */
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-block: 3rem 2rem;
+  }
+  .semesters { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  :root { --margin-w: 0px; }
+  .block { padding-left: 1.25rem; }
+  .block::before { left: 0; }
+  .margin-note {
+    position: static;
+    display: block;
+    width: auto;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 0.15rem;
+  }
+  .margin-note br { display: none; }
+  .top nav { gap: 0.8rem; }
+  .top nav a { font-size: 0.86rem; }
+  .top__name { display: none; }
+  .skills { grid-template-columns: 1fr; gap: 0.15rem; }
+  .skills dd { margin-bottom: 0.6rem; }
+}
