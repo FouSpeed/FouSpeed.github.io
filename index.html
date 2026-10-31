@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thomas Felmy, élève ingénieur à l'ENSEEIHT</title>
-  <meta name="description" content="E-portfolio de Thomas Felmy, élève ingénieur en 1re année Sciences du Numérique à l'ENSEEIHT : parcours, formation, projets, compétences et sport.">
+  <meta name="description" content="E-portfolio de Thomas Felmy, élève ingénieur en 1re année Sciences du Numérique à l'ENSEEIHT : formation, projets, mobilité internationale, engagement, sport et projet professionnel.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -16,12 +16,12 @@
   <header class="top">
     <div class="wrap top__inner">
       <a class="top__name" href="#">Thomas Felmy</a>
-      <nav aria-label="Sections">
-        <a href="#parcours">Parcours</a>
+      <nav aria-label="Rubriques">
         <a href="#formation">Formation</a>
-        <a href="#projets">Projets</a>
-        <a href="#competences">Compétences</a>
+        <a href="#mobilite">Mobilité</a>
+        <a href="#engagement">Engagement</a>
         <a href="#sport">Sport</a>
+        <a href="#projet-pro">Projet pro</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -29,15 +29,18 @@
 
   <main id="contenu">
 
-    <!-- Accueil -->
-    <section class="hero wrap">
+    <!-- 1. Accueil -->
+    <section class="hero wrap" id="accueil">
       <div class="hero__text">
-        <h1>Thomas Felmy</h1>
+        <div class="hero__id">
+          <img class="hero__photo" src="photo.jpg" alt="Portrait de Thomas Felmy" width="104" height="128">
+          <h1>Thomas Felmy</h1>
+        </div>
         <p class="hero__role">Élève ingénieur en 1re année, filière Sciences du Numérique à l'ENSEEIHT (Toulouse INP), après deux ans de prépa PCSI puis PSI* au lycée Gustave Eiffel de Bordeaux.</p>
-        <p>J'aime les problèmes qu'on peut modéliser puis faire tourner : un labyrinthe à résoudre, une grille de sudoku à générer, une trajectoire à simuler. Ce portfolio rassemble mon parcours, ce que j'étudie et les projets que j'ai codés.</p>
+        <p>J'aime les problèmes qu'on peut modéliser puis faire tourner : un labyrinthe à résoudre, une grille de sudoku à générer, une trajectoire à simuler. Hors des cours, je nage, je cours et je prépare le marathon de Paris. Ce portfolio rassemble mon parcours, mes projets et mes objectifs.</p>
         <p class="hero__links">
           <a class="btn" href="#projets">Voir mes projets</a>
-          <a class="btn btn--ghost" href="https://github.com/FouSpeed" target="_blank" rel="noopener">Mon GitHub</a>
+          <a class="btn btn--ghost" href="cv-fr.pdf" target="_blank" rel="noopener">Consulter mon CV</a>
         </p>
       </div>
 
@@ -50,41 +53,40 @@
       </figure>
     </section>
 
-    <!-- Parcours -->
-    <section id="parcours" class="block wrap">
-      <h2>Parcours</h2>
+    <!-- 2. Formation d'ingénieur -->
+    <section id="formation" class="block wrap">
+      <h2>Formation d'ingénieur</h2>
+      <p class="lead">Mon parcours jusqu'à l'N7, ce que j'y étudie, les projets que j'ai codés et les compétences que j'en retire.</p>
+
+      <h3 class="subhead" id="parcours">Parcours</h3>
       <ol class="timeline">
         <li>
           <span class="margin-note">Depuis sept. 2026</span>
-          <h3>ENSEEIHT, Toulouse INP</h3>
+          <h4>ENSEEIHT, Toulouse INP</h4>
           <p>Cycle ingénieur, 1re année en Sciences du Numérique : informatique, mathématiques appliquées, signal, réseaux et télécommunications.</p>
         </li>
         <li>
           <span class="margin-note">2025 – 2026</span>
-          <h3>PSI*, lycée Gustave Eiffel, Bordeaux</h3>
+          <h4>PSI*, lycée Gustave Eiffel, Bordeaux</h4>
           <p>Deuxième année de classe préparatoire, en classe étoile : mathématiques, physique-chimie, sciences de l'ingénieur et informatique, avec la préparation aux concours.</p>
         </li>
         <li>
           <span class="margin-note">2024 – 2025</span>
-          <h3>PCSI, lycée Gustave Eiffel, Bordeaux</h3>
+          <h4>PCSI, lycée Gustave Eiffel, Bordeaux</h4>
           <p>Première année de classe préparatoire scientifique.</p>
         </li>
         <li>
           <span class="margin-note">2021 – 2024</span>
-          <h3>Lycée Saint-Joseph de Tivoli, Bordeaux</h3>
-          <p>Seconde, première et terminale en voie générale, jusqu'au baccalauréat.</p>
+          <h4>Lycée Saint-Joseph de Tivoli, Bordeaux</h4>
+          <p>Seconde, première et terminale en voie générale. Baccalauréat obtenu avec la mention Bien en 2024.</p>
         </li>
       </ol>
-    </section>
 
-    <!-- Formation -->
-    <section id="formation" class="block wrap">
-      <h2>Ce que j'étudie cette année</h2>
+      <h3 class="subhead" id="cours">Ce que j'étudie cette année</h3>
       <p class="lead">La 1re année de Sciences du Numérique pose un socle commun avant le choix d'un parcours en 2e année. Les enseignements, d'après le programme de l'école :</p>
-
       <div class="semesters">
         <div class="semester">
-          <h3>Semestre 5 <span class="tag tag--now">en cours</span></h3>
+          <h4>Semestre 5 <span class="tag tag--now">en cours</span></h4>
           <dl>
             <dt>Informatique</dt>
             <dd>Programmation impérative, langage C, architecture des ordinateurs, modélisation</dd>
@@ -95,7 +97,7 @@
           </dl>
         </div>
         <div class="semester">
-          <h3>Semestre 6</h3>
+          <h4>Semestre 6</h4>
           <dl>
             <dt>Informatique</dt>
             <dd>Technologie objet, systèmes d'exploitation, architecture des ordinateurs, langage C</dd>
@@ -107,17 +109,13 @@
         </div>
       </div>
       <p class="note">S'y ajoutent l'anglais, le chinois en deuxième langue vivante, le sport et des modules de management. L'année se termine par un stage d'au moins six semaines.</p>
-    </section>
 
-    <!-- Projets -->
-    <section id="projets" class="block wrap">
-      <h2>Projets</h2>
+      <h3 class="subhead" id="projets">Projets</h3>
       <p class="lead">Tous les projets sont publics sur GitHub. Pour chacun : ce qu'il fait, et les points techniques qu'il m'a fait travailler.</p>
-
       <ul class="projects">
         <li class="project">
           <span class="margin-note">2026 <br>Ada</span>
-          <h3><a href="https://github.com/FouSpeed/bataille_navale" target="_blank" rel="noopener">Bataille navale</a> <span class="tag tag--now">en cours</span></h3>
+          <h4><a href="https://github.com/FouSpeed/bataille_navale" target="_blank" rel="noopener">Bataille navale</a> <span class="tag tag--now">en cours</span></h4>
           <p>Une bataille navale en terminal contre une IA, en cours d'écriture en Ada.</p>
           <ul class="points">
             <li>Découpage en paquetages : jeu, saisie, affichage, IA, file générique</li>
@@ -127,7 +125,7 @@
 
         <li class="project">
           <span class="margin-note">2023 <br>Python</span>
-          <h3><a href="https://github.com/FouSpeed/generate_sudoku" target="_blank" rel="noopener">Générateur de sudoku</a> <span class="tag tag--wip">non finalisé</span></h3>
+          <h4><a href="https://github.com/FouSpeed/generate_sudoku" target="_blank" rel="noopener">Générateur de sudoku</a> <span class="tag tag--wip">non finalisé</span></h4>
           <p>Génère une grille complète valide, retire des cases selon la difficulté voulue et exporte la grille et sa solution en image.</p>
           <ul class="points">
             <li>Programmation orientée objet (classes <code>Sudoku</code> et <code>Solver</code>)</li>
@@ -138,7 +136,7 @@
 
         <li class="project">
           <span class="margin-note">2023 <br>Python</span>
-          <h3><a href="https://github.com/FouSpeed/bouncing-ball" target="_blank" rel="noopener">Simulation d'un boulet de canon</a></h3>
+          <h4><a href="https://github.com/FouSpeed/bouncing-ball" target="_blank" rel="noopener">Simulation d'un boulet de canon</a></h4>
           <p>Un boulet lancé avec une vitesse et un angle initiaux, soumis à la pesanteur, animé en temps réel.</p>
           <ul class="points">
             <li>Mécanique du point : décomposition de la vitesse, g = 9,81 m/s²</li>
@@ -149,7 +147,7 @@
 
         <li class="project">
           <span class="margin-note">2023 <br>Python</span>
-          <h3><a href="https://github.com/FouSpeed/quizz-departement-fran-ais" target="_blank" rel="noopener">Quiz des départements</a></h3>
+          <h4><a href="https://github.com/FouSpeed/quizz-departement-fran-ais" target="_blank" rel="noopener">Quiz des départements</a></h4>
           <p>Un quiz pour apprendre les numéros des départements français, avec trois modes de jeu : normal, contre la montre et sans erreur.</p>
           <ul class="points">
             <li>Questions à choix multiples tirées sans répétition</li>
@@ -160,7 +158,7 @@
 
         <li class="project">
           <span class="margin-note">2023 <br>Python</span>
-          <h3><a href="https://github.com/FouSpeed/Pong" target="_blank" rel="noopener">Pong</a></h3>
+          <h4><a href="https://github.com/FouSpeed/Pong" target="_blank" rel="noopener">Pong</a></h4>
           <p>Le jeu Pong à deux joueurs sur le même clavier (W/S et flèches).</p>
           <ul class="points">
             <li>Classes pour la fenêtre, la balle et les raquettes</li>
@@ -170,7 +168,7 @@
 
         <li class="project">
           <span class="margin-note">2022 <br>Python</span>
-          <h3><a href="https://github.com/FouSpeed/labyrinthe" target="_blank" rel="noopener">Labyrinthe</a></h3>
+          <h4><a href="https://github.com/FouSpeed/labyrinthe" target="_blank" rel="noopener">Labyrinthe</a></h4>
           <p>Réalisé pendant mon stage de seconde au LaBRI (Laboratoire Bordelais de Recherche en Informatique), avec le chercheur Jean-François Marckert. Le programme génère un labyrinthe carré aléatoire et affiche, si on le demande, le plus court chemin jusqu'à la sortie. C'est ce principe qui anime le labyrinthe en haut de cette page.</p>
           <ul class="points">
             <li>Génération aléatoire sur une grille</li>
@@ -181,7 +179,7 @@
 
         <li class="project">
           <span class="margin-note">2021 <br>Python</span>
-          <h3><a href="https://github.com/FouSpeed/Texas-Instruments-TI-83-Premium-CE-Graphing-Calculator" target="_blank" rel="noopener">Programmes pour TI-83 Premium CE</a></h3>
+          <h4><a href="https://github.com/FouSpeed/Texas-Instruments-TI-83-Premium-CE-Graphing-Calculator" target="_blank" rel="noopener">Programmes pour TI-83 Premium CE</a></h4>
           <p>Deux programmes pour calculatrice : l'un donne les ensembles (ℕ, ℤ, 𝔻, ℚ, ℝ) auxquels appartient un nombre ou un calcul, l'autre décompose un entier en facteurs premiers et liste ses diviseurs.</p>
           <ul class="points">
             <li>Calcul exact avec le module <code>fractions</code></li>
@@ -189,16 +187,13 @@
           </ul>
         </li>
       </ul>
-    </section>
 
-    <!-- Compétences -->
-    <section id="competences" class="block wrap">
-      <h2>Compétences</h2>
+      <h3 class="subhead" id="competences">Compétences</h3>
       <dl class="skills">
         <dt>Langages</dt>
         <dd>Python (pygame, matplotlib, Pillow), Ada en apprentissage, C au programme de 1re année, initiation à Matlab</dd>
         <dt>Outils</dt>
-        <dd>Git et GitHub</dd>
+        <dd>Git, GitHub et GitHub Pages (ce site)</dd>
         <dt>Bases scientifiques</dt>
         <dd>Mathématiques, physique et sciences de l'ingénieur de prépa PSI*</dd>
         <dt>Méthode</dt>
@@ -206,9 +201,40 @@
       </dl>
     </section>
 
-    <!-- Sport -->
+    <!-- 3. Mobilité internationale -->
+    <section id="mobilite" class="block wrap">
+      <h2>Mobilité internationale</h2>
+      <p class="lead">Pour obtenir le diplôme, l'ENSEEIHT demande de passer au moins 16 semaines à l'étranger, en stage ou en semestre d'études dans une université partenaire.</p>
+      <ol class="timeline">
+        <li>
+          <span class="margin-note">Projet</span>
+          <h3>Un stage en Chine</h3>
+          <p>J'aimerais effectuer un stage en Chine, pour travailler dans un environnement international et mettre en pratique le chinois que j'apprends à l'N7.</p>
+        </li>
+        <li>
+          <span class="margin-note">Depuis sept. 2026</span>
+          <h3>Langues</h3>
+          <p>Anglais, et chinois en deuxième langue vivante à l'ENSEEIHT.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 4. Engagement citoyen et développement durable -->
+    <section id="engagement" class="block wrap">
+      <h2>Engagement citoyen et développement durable</h2>
+      <ol class="timeline">
+        <li>
+          <span class="margin-note">2022, en seconde</span>
+          <h3>Le Pain de l'amitié, Bordeaux</h3>
+          <p>Deux semaines de bénévolat au sein de l'association.</p>
+        </li>
+      </ol>
+      <p class="note">L'ENSEEIHT demande 40 heures d'engagement citoyen pendant le cursus : cette rubrique s'enrichira au fil de mes études.</p>
+    </section>
+
+    <!-- 5. Sport et activités -->
     <section id="sport" class="block wrap">
-      <h2>Sport</h2>
+      <h2>Sport et activités</h2>
       <p class="lead">Le sport m'accompagne depuis l'enfance. Mon objectif à long terme : terminer un Ironman.</p>
       <ol class="timeline">
         <li>
@@ -224,7 +250,7 @@
         <li>
           <span class="margin-note">Déjà terminés</span>
           <h3>Raid Centrale Lyon et semi-marathon de Bruges</h3>
-          <p>Le raid : environ 70 km de trail en deux jours, avec 3 000 m de dénivelé positif. Et un semi-marathon à Bruges.</p>
+          <p>Le raid : environ 70&nbsp;km de trail en deux jours, avec 3&nbsp;000&nbsp;m de dénivelé positif. Et le semi-marathon de Bruges en 2024.</p>
         </li>
         <li>
           <span class="margin-note">Pendant 5 ans</span>
@@ -234,21 +260,40 @@
         <li>
           <span class="margin-note">De 4 ans à la terminale</span>
           <h3>Natation en compétition</h3>
-          <p>Nageur en compétition pendant plus de dix ans, jusqu'à la fin du lycée.</p>
+          <p>Quatorze ans de compétition en club, jusqu'au niveau national.</p>
+        </li>
+        <li>
+          <span class="margin-note">Pendant 3 ans</span>
+          <h3>Batterie</h3>
+          <p>Trois ans de pratique de la batterie.</p>
         </li>
       </ol>
     </section>
 
-    <!-- Engagement -->
-    <section id="engagement" class="block wrap">
-      <h2>Engagement associatif</h2>
-      <ol class="timeline">
-        <li>
-          <span class="margin-note">En seconde</span>
-          <h3>Le Pain de l'amitié, Bordeaux</h3>
-          <p>Deux semaines de bénévolat au sein de l'association.</p>
-        </li>
-      </ol>
+    <!-- 6. Projet professionnel -->
+    <section id="projet-pro" class="block wrap">
+      <h2>Projet professionnel</h2>
+      <p class="lead">Mes documents de candidature, en français et en anglais, et ma présentation en vidéo.</p>
+
+      <h3 class="subhead" id="cv">CV</h3>
+      <ul class="docs">
+        <li><a class="btn" href="cv-fr.pdf" target="_blank" rel="noopener">CV en français (PDF)</a></li>
+        <li><a class="btn btn--ghost" href="cv-en.pdf" target="_blank" rel="noopener" hreflang="en">CV in English (PDF)</a></li>
+        <li><a class="btn btn--ghost" href="https://www.linkedin.com/in/thomas-felmy-8137262b3/" target="_blank" rel="noopener">Profil LinkedIn</a></li>
+      </ul>
+
+      <h3 class="subhead" id="video">Ma présentation en vidéo</h3>
+      <p class="lead">Deux à trois minutes, en anglais : qui je suis aujourd'hui, d'où je viens, et ce que je vise.</p>
+      <div class="video">
+        <p>La vidéo sera publiée ici prochainement.</p>
+        <!-- Pour ajouter la vidéo : mets-la sur YouTube en « Non répertoriée »,
+             puis remplace la ligne <p>…</p> ci-dessus par :
+        <iframe src="https://www.youtube-nocookie.com/embed/IDENTIFIANT_DE_LA_VIDEO"
+                title="Présentation de Thomas Felmy (en anglais)"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        -->
+      </div>
     </section>
 
     <!-- Contact -->
@@ -256,12 +301,9 @@
       <h2>Contact</h2>
       <p>Pour m'écrire ou voir mon code :</p>
       <ul class="contact__list">
-        <li><a href="https://github.com/FouSpeed" target="_blank" rel="noopener">github.com/FouSpeed</a></li>
         <li><a href="mailto:felmythomas@gmail.com">felmythomas@gmail.com</a></li>
-        <!-- Décommente et complète les lignes suivantes :
-        <li><a href="https://www.linkedin.com/in/ton-profil" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="cv.pdf">Télécharger mon CV (PDF)</a></li>
-        -->
+        <li><a href="https://www.linkedin.com/in/thomas-felmy-8137262b3/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/FouSpeed" target="_blank" rel="noopener">github.com/FouSpeed</a></li>
       </ul>
     </section>
   </main>
